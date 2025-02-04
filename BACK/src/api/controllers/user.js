@@ -32,6 +32,15 @@ const getUsersbyId = async (req, res, nexts) => {
 
 const register = async (req, res, next) => {
   try {
+    if (
+      !req.body.user ||
+      !req.body.name ||
+      !req.body.lastname ||
+      !req.body.email ||
+      !req.body.password
+    ) {
+      return res.status(400).json({ Message: 'Faltan datos obligatorios' })
+    }
     const newUser = new User({
       user: req.body.user,
       name: req.body.name,

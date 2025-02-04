@@ -41,14 +41,15 @@ export const deleteEvent = async (id) => {
         'DELETE',
         null,
         'application/json',
-        id
+        `${id}/remove`
       )
 
       modalContainer.close()
       modalContainer.remove()
       eventGenerator()
     } catch (error) {
-      console.error('Hubo un problema con la petición DELETE:', error)
+      alert('No estás autorizado para esta acción')
+      eventGenerator()
     }
   })
   closeModalClick(modalContainer)

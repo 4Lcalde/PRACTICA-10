@@ -53,6 +53,8 @@ export const submitLogin = async (user, password, form) => {
 
 //!EJECUCIÓN DEL REGISTRO
 export const submitRegister = async (body, form) => {
+  console.log(form)
+
   try {
     const user = body.get('user')
     const password = body.get('password')
@@ -67,6 +69,7 @@ export const submitRegister = async (body, form) => {
     )
 
     console.log(res)
+    console.log(res.data)
 
     if (res.status === 400) {
       const errorRegier = document.querySelector('.error-register')
@@ -75,7 +78,7 @@ export const submitRegister = async (body, form) => {
       }
       const error = document.createElement('p')
       error.className = 'error-register'
-      error.textContent = response.Message
+      error.textContent = res.data.Message
       form.append(error)
 
       return
