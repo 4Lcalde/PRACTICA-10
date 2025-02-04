@@ -66,9 +66,6 @@ export const submitRegister = async (body, form) => {
       'register'
     )
 
-    console.log(res)
-    console.log(res.data)
-
     if (res.status === 400) {
       const errorRegier = document.querySelector('.error-register')
       if (errorRegier) {
