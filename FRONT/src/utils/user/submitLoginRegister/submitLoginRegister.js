@@ -53,8 +53,6 @@ export const submitLogin = async (user, password, form) => {
 
 //!EJECUCIÓN DEL REGISTRO
 export const submitRegister = async (body, form) => {
-  console.log(form)
-
   try {
     const user = body.get('user')
     const password = body.get('password')
