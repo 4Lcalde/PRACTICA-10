@@ -1,6 +1,6 @@
 .section-user-page {
   @include display-info(flex, column, space-around, center);
-  @include spaces($margen-mediano, 0, $gap-grande);
+  @include spaces(70px 20px 20px 20px, 0, $gap-grande);
   min-height: 90svh;
 
   .div-img-user {
